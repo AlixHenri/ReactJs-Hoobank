@@ -27,8 +27,6 @@ const App = () => {
           <CTA />
           <FeedBackCard />
           <Footer />
-          <GetStarted />
-          <Hero />
           <Stats/>
           <Testimonials />
         </div>
