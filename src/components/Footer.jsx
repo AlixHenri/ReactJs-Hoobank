@@ -1,43 +1,78 @@
-import styles from "../style"
-import { logo } from "../assets"
-import { footerLinks, socialMedia } from "../constants"
+import React from 'react'
+import FacebookIcon from '../assets/facebook.svg'
+import InstagramIcon from '../assets/instagram.svg'
+import TwitterIcon from '../assets/twitter.svg'
+import LinkedinIcon from '../assets/linkedin.svg'
+import GithubIcon from '../assets/github.svg'
 
-const Footer = () => (
-    <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
-        <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
-          <div className="flex-1 flex flex-col justify-start mr-10">
-            <img src={logo} alt="Logo" className="w-[266px] h-[72px] object-contain" />
-            <p className={`${styles.paragraph} mt-4 max-w-[310px]`}>A new way to make the payments easy, reliable and secure</p>
-          </div>
-
-          <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
-            {footerLinks.map((footerlink) => (
-              <div key={footerlink.key} className="flex flex-col ss:my-0 my-4 min-w-[150px]">
-                <h4 className="font-poppins font-medium text-[18p] leading-[27px] text-white">
-                  {footerlink.title}
-                </h4>
-                <ul className="list-none mt-4">
-                  {footerlink.links.map((link, index) =>(
-                    <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secundary cursor-pointer ${index !== footerlink.links.length -1 ? 'mb-4' : 'mb-0'}`}>
-                      {link.name}
-                    </li>
-                  ))}
+const Footer = () => {
+  return (
+    <div className='w-full mt-24 bg-slate-900 text-gray-300 py-8 px-2'>
+        <div className='max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b-2 border-gray-600 py-8'>
+            <div>
+                <h6 className='font-bold uppercase pt-2'>Soluções</h6>
+                <ul>
+                    <li className='py-1'>Marketing</li>
+                    <li className='py-1'>Analytics</li>
+                    <li className='py-1'>E-Commerce</li>
+                    <li className='py-1'>Data</li>
+                    <li className='py-1'>Nuvem</li>
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-          <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">2023 Hoobank. All Rights Reserved.</p>
-          <div className="flex flew-row ,d:mt-0 mt-6">
-            {socialMedia.map((social, index) => (
-              <img key={social.id} src={social.icon} alt={social.id} className={`w-[21px] h-[21px] object-contain cursor-pointer ${index !== socialMedia.length -1 ? 'mr-6' : 'mr-0'}`} />
-            ))}
-          </div>
-        </div>
-    </section>
-)
+        
+            <div>
+                <h6 className='font-bold uppercase pt-2'>Suporte</h6>
+                <ul>
+                    <li className='py-1'>Preços</li>
+                    <li className='py-1'>Documentação</li>
+                    <li className='py-1'>Guias</li>
+                    <li className='py-1'>Status API</li>
+                </ul>
+            </div>
 
+            <div>
+                <h6 className='font-bold uppercase pt-2'>Empresa</h6>
+                <ul>
+                    <li className='py-1'>Sobre</li>
+                    <li className='py-1'>Blog</li>
+                    <li className='py-1'>Trabalhe Conosco</li>
+                    <li className='py-1'>Imprensa</li>
+                    <li className='py-1'>Parceiros</li>
+                </ul>
+            </div>
+
+            <div>
+                <h6 className='font-bold uppercase pt-2'>Legal</h6>
+                <ul>
+                    <li className='py-1'>Alegações</li>
+                    <li className='py-1'>Privacidade</li>
+                    <li className='py-1'>Termos de Serviço</li>
+                    <li className='py-1'>Termos de Uso</li>
+                    <li className='py-1'>Politicas</li>
+                </ul>
+            </div>
+            <div className="cols-span-2 pt-8 md:pt-2">
+                <p className='font-bold uppercase'>Inscreva-se para receber noticias e atualizações</p>
+                <p className='py-4'>As ultimas noticias, artigos, e recursos, enviados ao seu email semanalmente.</p>
+                <form className='flex flex-col sm:flex-row'>
+                    <input type="email" className='w-full p-2 mr-4 rounded-md mb-4'/>
+                    <button className='p-2 mb-4'>Inscrever</button>
+                </form>
+            </div>
+        </div>
+        <div className='flex flex-col max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-gray-500'>
+            <p className='p-4'>2023 Worflow, LLC. Todos os Direitos Reservados</p>
+            <div className="flex justify-between sm:max-w-[300px]">
+                <img src={FacebookIcon} alt="Facebook Icon" className='w-7 mr-4'/>
+                <img src={InstagramIcon} alt="Instagram Icon" className='w-7 mr-4'/>
+                <img src={TwitterIcon} alt="Twitter Icon" className='w-7 mr-4'/>
+                <img src={LinkedinIcon} alt="Linkedin Icon" className='w-7 mr-4'/>
+                <img src={GithubIcon} alt="Github Icon" className='w-7'/>
+            </div>
+        </div>
+    </div>
+  )
+}
 
 export default Footer

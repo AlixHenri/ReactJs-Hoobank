@@ -1,45 +1,37 @@
 import React from 'react'
-import styles from '../style';
-import { discount, robot } from '../assets';
-import GetStarted from './GetStarted';
+import bgImg from '../assets/cyber-bg.png'
+import CloudIcon from '../assets/cloud.svg'
+import DatabaseIcon from '../assets/database.svg'
+import PaperAirplaneIcon from '../assets/paper-airplane.svg'
+import ServerIcon from '../assets/server.svg'
 
-const Hero = () => (
-    <section id='home' className={`flex md:flex-row flex-col ${styles.paddingY}`}>
-      <div className={`flex 1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
-        <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
-          <img src={discount} alt="discount icon" className='w-[32px] h-[32px]' />
-          <p className={`${styles.paragraph} ml-2`}>
-            <span className='text-white'>20%</span> Discount For {" "}
-            <span className="text-white">1 Month</span> Account
-          </p>
+const Hero = () => {
+  return (
+    <div className='w-full h-screen bg-zinc-300 flex flex-col justify-between'>
+        <div className="grid md:grid-cols-2 max-w-[1240px] m-auto">
+            <div className='flex flex-col justify-center md:items-start w-full px-2 py-8'>
+                <p className='text-2xl'>Sequenciamento & Produção Exclusivos</p>
+                <h1 className='py-3 text-5xl md:text-7xl font-bold'>Gerenciamento em Nuvem</h1>
+                <p className='text-2xl'>Essa é nossa marca Tech.</p>
+                <button className='py-3 px-6 sm:w-[60%] my-4'>Comece Agora</button>
+            </div>
+            <div>
+              <img src={bgImg} alt="/" className='w-full'/>
+            </div>
+            <div className='absolute flex flex-col py-8 md:min-w-[760px] bottom-[5%]
+            mx-1 md:left-1/2 transform md:-translate-x-1/2 bg-zinc-200
+            border border-slate-300 rounded-xl text-center shadow-xl'>
+              <p>Serviços Data</p>
+              <div className='flex justify-between flex-wrap px-4'>
+                <p className='flex px-4 py-2'><img src={CloudIcon} className="h-6"/>Segurança a APPs</p>
+                <p className='flex px-4 py-2'><img src={DatabaseIcon} className="h-6"/>Painel de Controle de Design</p>
+                <p className='flex px-4 py-2'><img src={ServerIcon} className="h-6"/>Cloud Data</p>
+                <p className='flex px-4 py-2'><img src={PaperAirplaneIcon} className="h-6"/>APIs</p>
+              </div>
+            </div>
         </div>
-
-        <div className="flex flex-row justify-between items-center w-full">
-          <h1 className='flex-1 font-poppins font-semibold ss:text-[72px] ss:leading-[100px] leading-[75px] text-[52px] text-white'>The Next <br className='sm:block hidden'/> {" "}
-          <span className='text-gradient'>Generation</span> {" "}
-          </h1>
-          <div className="ss:flex hidden md:mr-4 mr-0">
-            <GetStarted />
-          </div>
-        </div>
-
-        <h1 className='font-poppins font-semibold ss:text-[68px] ss:leading-[100px] leading-[75px] text-[52px] text-white'>The Next <br className='sm:block hidden w-full'/>Payment Method.</h1>
-        <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Our team of experts uses a methodology to identify the credit cards most likely to fit your needs. We examine annual percentage rates, annual fees.</p>
-      </div>
-
-      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-        <img src={robot} alt="billing" className='w-[100%] h-[100%] relative z-[5]'/>
-
-        <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
-        <div className="absolute z-[1] w-[80%] h-[80%] rounded-full bottom-40 white__gradient" />
-        <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
-      </div>
-
-      <div className={`ss:hidden ${styles.flexCenter}`}>
-        <GetStarted />
-      </div>
-    </section>
-);
-
+    </div>
+  )
+}
 
 export default Hero

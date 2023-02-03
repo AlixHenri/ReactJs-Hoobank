@@ -1,29 +1,17 @@
-import Billing from "./Billing";
-import Business from "./Business";
-import Button from "./Button";
-import CardDeal from "./CardDeal";
-import Clients from "./Clients";
-import CTA from "./CTA";
-import FeedBackCard from "./FeedbackCard";
-import Footer from "./Footer";
-import GetStarted from "./GetStarted";
-import Hero from "./Hero";
-import Navbar from "./Navbar";
-import Stats from "./Stats";
-import Testimonials from "./Testimonials"
+import About from './About';
+import AllInOne from './AllInOne';
+import Footer from './Footer';
+import Hero from './Hero';
+import Navbar from './Navbar';
+import Pricing from './Navbar';
+import Support from './Support';
 
 export{
-    Billing,
-    Business,
-    Button,
-    CardDeal,
-    Clients,
-    CTA,
-    FeedBackCard,
+    About,
+    AllInOne,
     Footer,
-    GetStarted,
     Hero,
     Navbar,
-    Stats,
-    Testimonials
+    Pricing,
+    Support
 }
